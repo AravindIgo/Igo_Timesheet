@@ -6,16 +6,33 @@ public class LoginResponseDto {
     private String message;
     private Long userId;
     private String username;
+    private Long companyId;
 
     public LoginResponseDto() {
     }
 
-    public LoginResponseDto(boolean success, String message,
-                            Long userId, String username) {
+    // Existing constructor - keeps your old login code working
+    public LoginResponseDto(boolean success,
+                            String message,
+                            Long userId,
+                            String username) {
         this.success = success;
         this.message = message;
         this.userId = userId;
         this.username = username;
+    }
+
+    // New constructor with companyId
+    public LoginResponseDto(boolean success,
+                            String message,
+                            Long userId,
+                            String username,
+                            Long companyId) {
+        this.success = success;
+        this.message = message;
+        this.userId = userId;
+        this.username = username;
+        this.companyId = companyId;
     }
 
     public boolean isSuccess() {
@@ -32,5 +49,9 @@ public class LoginResponseDto {
 
     public String getUsername() {
         return username;
+    }
+
+    public Long getCompanyId() {
+        return companyId;
     }
 }
